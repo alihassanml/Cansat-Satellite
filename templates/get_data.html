@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Live Data Display</title>
+    <style>
+        body{
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="data-container">
+        <!-- Data will be displayed here -->
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            function fetchData() {
+                $.ajax({
+                    url: '/get_data/',
+                    success: function(data) {
+                        // Update the HTML content with the fetched data
+                        $('#data-container').html('Value 1: ' + data.pressure + '<br>' +
+                                                  'Value 2: ' + data.temperature + '<br>' +
+                                                  'Value 3: ' + data.altitude + '<br>' +
+                                                 );
+                    },
+                    error: function(xhr, status, error) {
+                        console.error('Error fetching data:', error);
+                    },
+                    complete: function() {
+                        // Fetch data again after 1 second
+                        setTimeout(fetchData, 1000);
+                    }
+                });
+            }
+
+            // Initial data fetch
+            fetchData();
+        });
+    </script>
+</body>
+</html>

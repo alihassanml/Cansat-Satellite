@@ -1,0 +1,158 @@
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Testimonial Slider</title>
+    <!-- Google Fonts -->
+   
+    <!-- Stylesheet -->
+    <style>
+      * {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: white;
+  font-family: "Poppins", sans-serif;
+}
+
+.wrapper {
+  background-color: rgb(230, 213, 213);
+  width: 80vw;
+  max-width: 41em;
+  margin-top: 200px;
+  min-height: 25em;
+  border-radius: 0.6em;
+  transform: translate(-50%, -50%);
+  margin-left: 700px;
+  box-shadow: 0 1.8em 3em rgba(1, 17, 39, 0.15);
+  display: flex;
+}
+.testimonial-container {
+  width: 85%;
+  height: 100%;
+  position: relative;
+  margin: auto;
+  padding: 1.8em 1.2em;
+}
+.wrapper button {
+  font-size: 1.8em;
+  height: 2.2em;
+  width: 2.2em;
+  background-color: #ffffff;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  border: none;
+  color: #0a69ed;
+  box-shadow: 0 0 1em rgba(1, 17, 39, 0.25);
+  cursor: pointer;
+  border-radius: 50%;
+}
+button#next {
+  right: -1.1em;
+}
+button#prev {
+  left: -1.1em;
+}
+.testimonial-container p {
+  color: #8c8c90;
+  text-align: center;
+  font-size: 0.9em;
+  line-height: 2em;
+  letter-spacing: 0.05em;
+}
+.testimonial-container img {
+  display: block;
+  margin: 1.8em auto 1.25em auto;
+  border-radius: 50%;
+  width: 4.4em;
+}
+.testimonial-container h3 {
+  color: #2d3d67;
+  font-size: 1em;
+  text-align: center;
+}
+.testimonial-container h6 {
+  color: #bcc4da;
+  font-size: 0.9em;
+  letter-spacing: 0.03em;
+  font-weight: 400;
+  text-align: center;
+}
+@media screen and (max-width: 650px) {
+  .wrapper {
+    font-size: 14px;
+  }
+}
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="testimonial-container" id="testimonial-container"></div>
+      <button id="prev">&lt;</button>
+      <button id="next">&gt;</button>
+    </div>
+    <!-- Script -->
+    <script>
+      //Testimonial Data
+const testimonials = [
+  {
+    name: "Eva Sawyer",
+    job: "CEO, Fashworks",
+    image: "https://i.postimg.cc/mgp4pfz5/profile-image-1.png",
+    testimonial:
+      "Neque volutpat ac tincidunt vitae semper quis lectus nulla at volutpat diam ut venenatis tellus in metus vulputate eu scelerisque felis imperdiet proin fermentum leo vel orci porta non pulvinar neque laoreet suspendisse interdum consectetur",
+  },
+  {
+    name: "Katey Topaz",
+    job: "Developer, TechCrew",
+    image: "https://i.postimg.cc/PfSSwtB9/profile-image-2.png",
+    testimonial:
+      "Elementum tempus egestas sed sed risus pretium quam vulputate dignissim suspendisse in est ante in nibh mauris cursus mattis molestie a iaculis at erat pellentesque adipiscing commodo elit at imperdiet dui accumsan sit amet nulla",
+  },
+  {
+    name: "Jae Robin",
+    job: "UI Designer, Affinity Agency",
+    image: "https://i.postimg.cc/W4mnbjG9/profile-image-3.png",
+    testimonial:
+      "Orci nulla pellentesque dignissim enim sit amet venenatis urna cursus eget nunc scelerisque viverra mauris in aliquam sem fringilla ut morbi tincidunt augue interdum velit euismod in pellentesque massa placerat duis ultricies lacus sed turpis",
+  },
+  {
+    name: "Nicola Blakely",
+    job: "CEO,Zeal Wheels",
+    image: "https://i.postimg.cc/xdLsJL23/profile-image-4.png",
+    testimonial:
+      "Sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit",
+  },
+];
+
+//Current Slide
+let i = 0;
+//Total Slides
+let j = testimonials.length;
+
+let testimonialContainer = document.getElementById("testimonial-container");
+let nextBtn = document.getElementById("next");
+let prevBtn = document.getElementById("prev");
+
+nextBtn.addEventListener("click", () => {
+  i = (j + i + 1) % j;
+  displayTestimonial();
+});
+prevBtn.addEventListener("click", () => {
+  i = (j + i - 1) % j;
+  displayTestimonial();
+});
+
+let displayTestimonial = () => {
+  testimonialContainer.innerHTML = `
+    <p>${testimonials[i].testimonial}</p>
+    <img src=${testimonials[i].image}>
+    <h3>${testimonials[i].name}</h3>
+    <h6>${testimonials[i].job}</h6>
+  `;
+};
+window.onload = displayTestimonial;
+    </script>
+  </body>
+</html>

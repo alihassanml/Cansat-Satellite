@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sgin up
+  </title>
+  <style>
+    *{
+      margin:0;
+      padding: 0;
+    }
+    body{
+      background-color:rgb(15,19,25);
+      color: rgb(214, 213, 213);
+    }
+    input{
+        display: block;
+        min-width: 350px;
+        outline: none;
+        margin-top: 6px;
+        height: 40px;
+        padding-left: 10px;
+        border: 1px solid rgba(66, 64, 64, 0.521);
+        background-color: rgba(146, 142, 142, 0.2);
+      }
+      
+      .button{
+        min-width: 360px;
+        height: 40px;
+        margin-top: 30px;
+        padding-left: 10px;
+        /* border-right: none; */
+        border: 2px solid rgb(94,153,251);
+        background-color:rgb(94,153,251);
+      }
+      
+  </style>
+</head>
+<body>
+  <a href="{% url 'sginup' %}"><button  style="margin-left:87%; margin-top: 20px; width: 150px; height: 40px; background-color: transparent; color: white; border: 2px solid rgb(41, 41, 41);">Sgin Up</button></a>
+  <div class="main-1" style="width: 100%; display: flex;">
+    <div class="a1" style="margin-left: 35%;  width: 600px; height: 430px;" >
+        <h1  style="color:rgb(127, 166, 224); margin-top: 20px; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; ">Here you can Sgin Up</h1>
+        <p style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; margin-top: 10px;">let's Join Us :)</p>
+
+        <form action="" method="post">
+          {% csrf_token %}
+          <p style="font-family:sans-serif; margin-top: 70px; font-size: 14px; ">User Name</p>
+          <input type="text" name="username" id="" required>
+       
+          <br>
+
+          <p style="font-family:sans-serif;  font-size: 14px;" >Enter Password</p>
+
+          <input type="password" name="password" id="" required maxlength="12" minlength="3">
+          <button class="button" type="submit">Submit</button>
+          <br>
+          <br>
+          <a href="" style="margin-top: 5px; margin-left: 130px; text-decoration: none; color:rgb(123, 148, 185) ;font-family:sans-serif; font-size: 14px; margin-top: 50px;">Forget Password ?</a>
+
+        </form>
+    </div>
+  </div>
+
+
+  <div class="main-2" style="width: 100%;  height: 150px; display: flex;">
+    <style>
+      .custom-shape-divider-bottom-1712609675 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1712609675 svg {
+    position: relative;
+    display: block;
+    width: calc(127% + 1.3px);
+    height: 195px;
+}
+
+.custom-shape-divider-bottom-1712609675 .shape-fill {
+    fill: #424141;
+}
+    </style>
+    <div class="custom-shape-divider-bottom-1712609675">
+      <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
+          <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
+          <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
+      </svg>
+  </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <title>Document</title>
+  <style>
+       .a1{
+        height: 400px auto;
+      }
+      body{
+        min-height: 200vh;
+        background-color: white !important;
+      }
+      #ali{
+        background-color: rgba(0, 0, 0, 0.74);
+        position: fixed;
+        top: 0;
+        width: 100%;
+        transition: all 0.5s;
+        color: white;
+      }
+    .dropbtn {
+
+    color: rgb(255, 255, 255);
+    
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    background: transparent;
+  }
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.nav-link{
+  color: rgb(255, 255, 255);
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  overflow: hidden;
+  /* background: linear-gradient(rgb(0, 0, 0),rgb(245, 163, 176)); */
+  background-color: rgba(0, 0, 0, 0.466);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  margin-top: 10px;
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: rgba(8, 8, 8, 0.575);}
+
+.dropdown:hover .dropdown-content {display: block; height: 600px auto;
+}
+#a2{
+border: none;
+margin-left: 200px ;
+
+}
+@media only screen and (max-width:300px){
+#a2{
+  margin:none;
+  display: flex;
+  float: left;
+  overflow: hidden;
+}
+}
+#c1:hover{
+  background-color: rgba(255, 253, 253, 0.116);
+  color: white;
+}
+#a1:hover{
+  background-color: rgba(255, 253, 253, 0.116);
+  color: white;
+
+  /* background-color: rgb(218, 97, 117); */
+
+}
+
+  </style>
+</head>
+<body>
+  {% load static %}
+  <div id="ali">   
+     <nav class="navbar navbar-expand-lg a1">
+    <div class="container-fluid a1">
+      <a class="navbar-brand" href="#"><img src="/static/image/logo.png" alt="" width="60px" height="60px"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style="margin-left: 500px;">
+        <div class="navbar-nav">
+          <a class="nav-link active" aria-current="page" href="#" id="c1" style="color: white;">Home</a>
+          <a class="nav-link " href="{% url 'feature' %}"  id="c1">How it works</a>
+          <a class="nav-link " href="{% url 'dashboard' %}" id="a1">Dashboard</a>
+
+          
+        </div>
+        
+          <div class="dropdown">
+            <button class="dropbtn">More</button>
+            <div class="dropdown-content">
+              <a href="{% url 'map' %}">Map</a>
+              <a href="{% url 'profile' %}">Team</a>
+              <a href="{% url 'values' %}">Values</a>
+              <a href="{% url 'contact' %}">Contact</a>
+            
+          </div>
+          <br>
+          
+      </div>
+    </div>
+
+  </nav></div>
+
+  <style>
+    .main-front{
+        height: 100vh;
+        /* background-image:linear-gradient(rgba(0, 0, 0, 0.247),rgba(0, 0, 0, 0.277)),url(https://static.wixstatic.com/media/42111e_eaf14fabe85544e6ad33d075dd5db34f~mv2.jpg/v1/fill/w_1349,h_859,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/42111e_eaf14fabe85544e6ad33d075dd5db34f~mv2.jpg); */
+        background-image:linear-gradient(rgba(0, 0, 0, 0.233),rgb(0, 0, 0)),url(https://gov-web-sing.s3.ap-southeast-1.amazonaws.com/uploads/2024/3/Untitled%20design-1710916770072.jpg);
+        background-image:linear-gradient(rgba(0, 0, 0, 0.233),rgb(0, 0, 0)),url(https://gov-web-sing.s3.ap-southeast-1.amazonaws.com/uploads/2024/3/Untitled%20design-1710916770072.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    } 
+    .front-main-text{
+        padding-top: 470px;
+        padding-left: 260px;
+        color: rgba(255, 242, 242, 0.747);
+        font-size: 70.64px;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+    }
+  </style>
+
+
+            <!-- main div -->
+
+  <div class="main-front">
+        <h1 class="front-main-text">National Cansat Competition</p> </h1>
+  </div>
+
+   <!-- div end  -->
+
+
+
+
+      <!-- // Image -->
+      <style>
+        .iamge-1{
+            height: 500px;
+            width: 100%;
+            overflow-x: hidden;
+            display: flex;
+        } 
+        .image_2{
+            width: 60%;
+            height:100%;overflow: hidden;
+            display: flex;
+            margin-left: 100px;
+        }
+        .image_3{
+            width: 100%;
+            min-height: 300px;
+        }
+        .a_1{
+            display: block;
+            height:300px;
+            width: 40%;
+            margin-top: 10px;
+            margin-left: 7px;
+            margin-right: 2px;
+            transition: 0.7s;
+        }
+        .a_1:hover{
+            transform: scale(1.1);
+            box-shadow:0 0 10px rgb(2, 2, 2);
+
+        }
+        .a_1a{
+          background-image: linear-gradient(rgba(0, 0, 0, 0.486),rgba(0, 0, 0, 0.692)),url(/static/image/pcbgps.jpg);
+          background-size: cover;
+          display: flex;
+          border-bottom: 6px solid #EF480E;
+          background-position: center;
+          
+        }
+        .a_1b{
+          background-image: linear-gradient(rgba(0, 0, 0, 0.18),rgba(0, 0, 0, 0.692)),url(/static/image/canmodule.jpg);
+          background-size: cover;
+          display: flex;
+          height:280px;
+          width: 400px;
+          background-position: center;
+        }
+        .a_1c{
+          display: flex;
+          height:280px;
+          background-image: linear-gradient(rgba(0, 0, 0, 0.18),rgba(0, 0, 0, 0.692)),url(/static/image/pcb.jpg);
+          background-size: cover;
+          background-position: center;
+        }
+        .text_satelite_detail{
+          margin-left: 100px;
+          font-size: 80px;
+          font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+          color: rgb(24, 23, 23); 
+        }
+    </style>
+    <br>
+    <br>
+    <br>
+    <div><span style="margin-top: 100px; margin-left: 100px;color: black; font-size: 60px; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; text-transform: uppercase; padding-top: 100px;">Cansat Picture
+    </span></div>
+    <div style="width: 100px; background-color: rgb(219, 64, 3);height: 4px;  margin-left:100px; margin-top: 10px;"></div>            
+        <div style="width: 300px; background-color:  rgb(219, 64, 3);height: 1px; margin-left: 100px;"></div> 
+        <br>
+    <div class="iamge-1">
+
+        <div class="image_2">
+            <div class="a_1 a_1a" data-aos="zoom-in-down"><span style="margin-top: 310px; padding-left: 80px; "></span> </div>
+            <div class="a_1 a_1b" data-aos="zoom-in-down"><span style="margin-top: 290px; padding-left: 80px;"></span></div>
+            <div class="a_1 a_1c" data-aos="zoom-in-down"><span style="margin-top: 290px; padding-left: 80px;"></span></div>
+        </div>
+        
+    </div>
+    <div class="image_3">
+      <ul style="display: block;">
+        <span class="text_satelite_detail" data-aos="zoom-in-right">Cansat Overview</span>
+        
+        <h4 class="text_satelite_detail" style="font-size: 30px; color: rgb(24, 23, 23);" >More Than Just A Destination</h4>
+        <div style="width: 100px; background-color: rgb(219, 64, 3);height: 4px;  margin-left:100px; margin-top: 30px;"></div>            
+        <div style="width: 300px; background-color:  rgb(219, 64, 3);height: 1px; margin-left: 100px;"></div> 
+        <ul style="display: flex;"><p style=" color: rgb(95, 91, 91);  width: 40%; margin-top: 40px;margin-right: 50px;  margin-left: 100px;"><b> ESP32-CAM</b> This module serves as the core of our CanSat, providing both processing power and the capability to capture images or video with its built-in camera.
+
+        <b>  NRF24L01 </b> The NRF24L01 module enables wireless communication, allowing our CanSat to transmit data to ground stations or other devices in real-time.
+          
+        <b>GPS </b> Incorporating a GPS module provides precise location tracking, essential for navigation and data collection during the CanSat's flight.
+          
+         <b> Atmospheric Pressure Sensor </b> By including an atmospheric pressure sensor, our CanSat can measure changes in air pressure as it ascends and descends, aiding in altitude determination and atmospheric studies.
+          </p>
+          <p style="width: 40%; margin-top: 40px; margin-right:40px; color: rgb(95, 91, 91); ">These modules work synergistically to enhance the functionality and capabilities of our CanSat, enabling it to collect valuable data and perform various tasks autonomously or under remote control. Through the integration of these components, our CanSat project aims to contribute to the exploration and understanding of the Earth's atmosphere and beyond.</p>
+        </ul>
+      </ul>
+    </div>
+
+    <!-- /3rd-div / -->
+
+    <style>
+        .a_21{
+          margin-left: 100px auto;
+          width: 100% auto;
+          height: 400px;
+          display: flex;
+        }
+        .a_11{
+          display: block;
+          height:340px ;
+          margin-left:10px;
+          width:400px;
+          margin: auto  ;
+            background-color: rgb(17, 17, 17);
+            color: black !important;
+          /* background:linear-gradient(#17222e,#212529); */
+          transition: 0.7s;
+        }
+        .a_11::before{
+          content: '';
+          position:absolute ;
+          height:340px ;
+          width:408px;
+          margin-bottom: 3px;
+          margin-left: -4px;
+          border-left: 2px solid rgb(88, 85, 85);
+          border-right: 2px solid rgb(88, 85, 85);
+        }
+       
+
+        .a_11:hover{
+          transform: scale(1.2);
+          box-shadow:0 0 10px black;
+        }
+        .text_satelite_detail_1{
+          font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        .rs-svg-mode .rs-range{
+            stroke:  rgb(167, 157, 103) !important  ;
+        }
+        .rs-tooltip{
+            color: white !important;
+        }
+      </style>
+
+<br>
+<br>
+<br>
+<br>
+
+
+        <span class="text_satelite_detail" style="color: rgb(0, 0, 0); font-size: 40px; margin-left: 130px" data-aos="zoom-out-up" >Value Of Satelite</span>
+        <div style="width: 100px; background-color: rgb(219, 64, 3);height: 4px;  margin-left:130px; margin-top: 30px;"></div>            
+        <div style="width: 300px; background-color:  rgb(219, 64, 3);height: 1px; margin-left: 130px;"></div> 
+    <div class="a_21" style="margin-top: 60px;" >
+      
+        <div class="a_11" style="margin-left: 50px;" data-aos="zoom-in-down">
+          <br>
+          <br><span class="text_satelite_detail_1" style="color: rgb(218, 218, 218); font-size: 25px; padding-left: 40px; padding-top: 40px;">Value Temperature</span>  
+          <p style=" padding-left: 40px; font-size: 13px;margin-right: 10px; margin-top: 10px; color: rgb(255, 255, 255); ">A temperature sensor is a device that is designed to measure the degree of hotness or coolness in an object.</p>
+          <center><link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/round-slider@1.4.0/dist/roundslider.min.css'>
+          <div id="slider1"></div>
+            </center>  
+        </div>
+
+
+
+        <div class="a_11" data-aos="zoom-in-down">
+
+          <br>
+          <br><span class="text_satelite_detail_1" style="color: rgb(255, 255, 255); font-size: 25px; padding-left: 40px; padding-top: 40px;">Value Pressure</span>  
+          <p style=" padding-left: 40px; font-size: 13px;margin-right: 10px; margin-top: 10px; color: rgb(255, 255, 255); ">Pressure is the amount of force applied perpendicular to the surface of an object per unit area and the for it is p (or P).</p>
+
+           <center> <div id="slider2"></div></center>
+
+        </div>
+
+
+
+        <div class="a_11" style="width: 400px; margin-right: 50px;" data-aos="zoom-in-down">
+          <br>
+          <br><span class="text_satelite_detail_1" style="color: rgb(255, 255, 255); font-size: 25px; padding-left: 40px; padding-top: 40px;">Altitude</span>  
+          <p style=" padding-left: 40px; font-size: 13px; margin-right: 10px; margin-top: 10px; color: rgb(255, 255, 255); ">The height of an object or structure above a reference level, usually above sea level or the Earth's surface</p>
+          
+          {% include 'rounder.html' %}
+
+      </div>
+      
+    </div>
+
+
+        <style>
+            .button-show-more{
+                width: 250px;
+                margin-top: 70px;
+                margin-left: 560px;
+                border-radius: 40px;
+                height: 50px;
+                color: white;
+                background-color:black;
+                backdrop-filter: blur(10px);
+                border: 1.8px solid rgb(61, 60, 60);
+
+            }
+        </style>
+        <a href="{% url 'map' %}"><button class="button-show-more">Click here</button></a>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+     <!-- / sun rotating / -->
+     <style>
+        .activity_text{
+            text-align: center;
+            color: rgb(0, 0, 0);
+            font-size: 60px;
+            font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            padding-top: 60px;
+        }
+        .activity_1{
+            width: 100%;
+            margin-top: 100px;
+            display: flex;
+            height: 250px;
+        }
+        .activity_2{
+            width: 450px;
+            min-height: 270px;
+            margin-left: 50px;
+            margin-top: 20px;
+            /* background:linear-gradient(#17222e,#212529); */
+            background-color: rgb(15, 15, 15);
+            position: relative;
+        }
+        .activity_2::before{
+          content: '';
+          position:absolute ;
+          width: 460px;
+          min-height: 270px;
+          margin-bottom: 3px;
+          margin-left: -4px;
+          border-left: 2px solid rgb(88, 85, 85);
+          border-right: 2px solid rgb(88, 85, 85);
+        }
+
+        .activity_button{
+            width: 150px;
+            height: 60px;
+            border: 1px solid  rgb(0, 0, 0);
+            color: rgb(0, 0, 0);
+            margin-top: 140px;
+            margin-left: 20px;
+
+            background-color: transparent;
+            font-size: 15px;
+        }
+    </style>
+<!-- //testimnal -->
+
+
+<style>
+        .whats-new-perform{
+            display: flex;
+            height: 400px;
+            /* clip-path: polygon(0 0, 100% 0, 100% calc(100% - 5vw), 0 100%); */
+            margin-top: 100px;
+        }
+        .whats-new-perform-1{
+            width: 50%;
+            margin: 0 auto;
+            margin-top: 50px;
+            height: 400px;
+            background-color:rgb(154,141,109) ;
+        }
+        .whats-new-perform-2{
+            width: 50%;
+            height: 400px;
+        }
+</style>
+
+<div class="whats-new-perform">
+    <div class="whats-new-perform-1">
+        <h1 style="margin-left: 150px; margin-top: 70px; color: rgb(255, 253, 253); font-weight: bold; font-size: 50px;">What's new</h1>
+        <p style="color: rgb(255, 255, 255); padding-left: 70px; padding-right: 70px; text-align: center; padding-top: 30px;">CANSET, our satellite endeavor, pioneers innovation with a mission beyond the stars. With groundbreaking technology and visionary design, we redefine the limits of exploration. Join us as we embark on a journey to unlock new frontiers and inspire the world. Together, we elevate possibilities, one orbit at a time.</p>
+    </div>
+
+
+    <div class="whats-new-perform-2">
+      <div id="carouselExampleIndicators" class="carousel slide">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active"  >
+              <div style="height: 500px; background-image:linear-gradient(rgba(0, 0, 0, 0.342),rgb(0, 0, 0)),url(https://tse4.mm.bing.net/th/id/OIG4.SPh644yydGcbZljGGfNQ?pid=ImgGn); background-size: cover;  background-position: left; " ></div>
+
+            </div>
+            <div class="carousel-item" >
+              <div style="height: 500px; margin-top: -0px; background-size: cover; background-image:linear-gradient(rgba(0, 0, 0, 0.288),black),url(https://tse3.mm.bing.net/th/id/OIG4.25yk9zK2bF7QSGGECX6e?pid=ImgGn); background-size: cover;  background-position:top right; " ></div>
+
+            </div>
+            <div class="carousel-item" >
+              <div style="height: 500px; margin-top: -0px; background-size: cover; background-image:linear-gradient(rgba(0, 0, 0, 0.288),black),url(https://tse1.mm.bing.net/th/id/OIG4.5ot7m2zqRXUNi09awuSY?pid=ImgGn); background-size: cover;  background-position:center; " ></div>
+
+
+            </div>
+          </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+    </div>
+</div>
+
+<br>
+<br>
+<br> 
+<br> 
+<br> 
+<br> 
+<br> 
+
+<!-- <div style="min-height: 160vh;  display:flexbox;"> -->
+    <h1 class="activity_text" style="text-transform: uppercase;">Subsystems of CanSat 
+    </h1>
+    <div style="width: 100px; background-color: rgb(219, 64, 3);height: 4px;  margin-left: 40%; margin-top: 20px;"></div>            
+    <div style="width: 300px; background-color:  rgb(219, 64, 3);height: 1px; margin-left: 40%;"></div> 
+<br>
+<br>
+    <style>
+      .img-txt{
+        display: flex;
+        width: 100%;
+        height: 400px;
+      }
+      .im-main-1{
+        width: 50%;
+      }
+      .im-main-2{
+        width: 50%;
+      }
+      .img-apply-1{
+        width: 80%;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.541),transparent),url(/static/image/camera.jpg);
+        background-size: cover;
+        background-position:left;
+        margin: auto;
+        margin-top: 40px;
+        height: 89%;
+      }
+    
+    </style>
+    
+    <div class="img-txt">
+      <div class="im-main-1">
+        <div class="img-apply-1"></div>
+      </div>
+    
+      <div class="im-main-2">
+        <p style=" margin-left: 30px; margin-top: 50px; width: 100px; height: 30px;  color: rgb(46, 45, 45);  padding-top: 10px; font-style: normal; text-transform: uppercase;  font-family: monospace; padding-left: 30px;font-size: 16px; ">Camera</p>
+        <p style="font-size: 30px; font-weight: bold;  margin-left: 40px; margin-right: 40px; color: black;"> <a href="" style="text-decoration: none;"> ESP32-CAM </a> is a small size, low power consumption camera module based on ESP32. It comes with an OV2640 camera and provides onboard TF card slot</p>
+        <style>
+          .button-read-more{
+              width: 250px;
+              margin-top: 10px;
+              margin-left: 50px;
+              height: 50px;
+              color: white;
+              text-transform: uppercase;
+              background-color:black;
+              font-family: monospace;
+              font-size: 20px;
+              backdrop-filter: blur(10px);
+              border: 1.8px solid rgb(61, 60, 60);
+        
+          }
+        </style>
+        
+        <button class="button-read-more">Read More</button>
+      </div>
+    </div>
+
+
+      <!-- 2nd -------- -->
+
+      <style>
+        .img-txt{
+          display: flex;
+          width: 100%;
+          height: 400px;
+        }
+        .im-main-1{
+          width: 50%;
+        }
+        .im-main-2{
+          width: 50%;
+        }
+        .img-apply-2{
+          width: 80%;
+          background-image: linear-gradient(rgba(0, 0, 0, 0.541),transparent),url(/static/image/mrf204.jpg);
+          background-size: cover;
+          background-position:center;
+          margin: auto;
+          margin-top: 40px;
+          height: 80%;
+        }
+      
+      </style>
+      
+      <div class="img-txt">
+
+        <div class="im-main-2">
+          <p style=" margin-left: 40px; margin-top: 50px; width: 100px; height: 30px;  color: rgb(0, 0, 0);  padding-top: 10px; font-style: normal; text-transform: uppercase;  font-family: monospace; padding-left: 30px;font-size: 16px; ">NRF24L01</p>
+          <p style="font-size: 30px; font-weight: bold;margin-left: 50px; margin-right: 40px;color: black; "> <a href="" style="text-decoration: none;" >NRF24L01</a> It uses the 2.4 GHz band and it can operate with baud rates from 250 kbps up to 2 Mbps  </p>
+          <style>
+            .button-read-more{
+                width: 250px;
+                margin-top: 10px;
+                margin-left: 50px;
+                height: 50px;
+                color: white;
+                text-transform: uppercase;
+                background-color:black;
+                font-family: monospace;
+                font-size: 20px;
+                backdrop-filter: blur(10px);
+                border: 1.8px solid rgb(61, 60, 60);
+          
+            }
+          </style>
+          
+          <button class="button-read-more">Read More</button>
+        </div>
+
+        <div class="im-main-1">
+          <div class="img-apply-2"></div>
+        </div>
+      </div>
+
+          <!-- 3rd ---------------------  -->
+
+
+
+          <style>
+            .img-txt{
+              display: flex;
+              width: 100%;
+              height: 400px;
+            }
+            .im-main-1{
+              width: 50%;
+            }
+            .im-main-2{
+              width: 50%;
+            }
+            .img-apply-3{
+              width: 80%;
+              background-image: linear-gradient(rgba(0, 0, 0, 0.541),transparent),url(/static/image/gps.jpg);
+              margin: auto;
+              background-position: center;
+              background-size: cover;
+              margin-top: 40px;
+              height: 80%;
+            }
+          
+          </style>
+          
+          <div class="img-txt">
+            <div class="im-main-1">
+              <div class="img-apply-3"></div>
+            </div>
+          
+            <div class="im-main-2">
+            <p style=" padding-left: 40px; font-size: 16px; text-transform: uppercase; color: black; font-family: monospace;  padding-top: 40px;" >GPS TEMPRATURE SENSOR atmospheric pressure</p>
+              <p style="font-size: 30px; font-weight: bold;  margin-left: 40px; margin-right: 40px;color: rgb(37, 37, 37); "><a href="" style="text-decoration: none;">GPS</a> temperature sensor measures atmospheric pressure to provide accurate location-based weather data.</p>
+              <style>
+                .button-read-more{
+                    width: 250px;
+                    margin-top: 10px;
+                    margin-left: 50px;
+                    height: 50px;
+                    color: white;
+                    text-transform: uppercase;
+                    background-color:black;
+                    font-family: monospace;
+                    font-size: 20px;
+                    backdrop-filter: blur(10px);
+                    border: 1.8px solid rgb(61, 60, 60);
+              
+                }
+              </style>
+              
+              <button class="button-read-more">Read More</button>
+            </div>
+          </div>
+    
+    <button class="activity_button" style=" margin-left: 37%; color: white; background-color:  rgb(0, 0, 0);">Book Now</button>
+    <button class="activity_button">Adminstator</button>
+<!-- </div>  -->
+
+
+
+
+
+<style>
+
+  .a_3{
+    min-height: 70vh;
+    width: 80%;
+    background-color: rgb(223, 220, 220);
+  }
+  .a_4{
+    width: 350px;
+    height: 350px;
+    margin-top: 60px;
+    transition: all 0.3s;
+    margin-left: 120px;
+    background-image:linear-gradient(rgba(0, 1, 44, 0.514),rgba(0, 0, 0, 0.842)),url(/static/image/samranlaptop.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  
+  .a_4_2{
+    background-image: linear-gradient(rgba(44, 29, 0, 0.514),rgba(0, 0, 0, 0.582)),url(/static/image/tayyablaptop.jpg);
+    width: 350px;
+    height: 350px;
+    margin-left: 12px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  
+  }
+  .a_5{
+    width: 350px;
+    height: 350px;
+    transition: all 0.3s;
+    margin-left: 10px;
+    margin-top: 10px;
+    background-image: linear-gradient(rgba(44, 29, 0, 0.514),rgba(0, 0, 0, 0.582)),url(/static/image/asfandlaptop.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .a_5_1{
+    width: 350px;
+    margin-top: 10px;
+    height: 350px;
+    margin-left: 10px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(/static/image/alihassan.jpg);
+  
+  }
+  
+  .a_4:hover , .a_5:hover , .a_6:hover , .a_7:hover{
+      transform: scale(1.1);
+    }
+    .a_3_1_2{
+      display: flex;
+    }
+    .group_fotage{
+            color: rgb(0, 0, 0);
+            font-size: 60px;
+            padding-left: 80px;
+            font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            padding-top: 60px;
+    }
+  </style>
+  
+  
+  <br>
+  <br>
+  <br>
+  
+  <!-- photo graphy image  -->
+  <div class="container-fluid a_3 overflow-x-hidden" >
+    <h1 class="group_fotage" style="margin-left: -10px !important;">Group Footage</h1>
+    <div class="a_3_1_2">
+        <div class="a_4"  > <img src="" alt="" > 
+        </div>
+        <div class="a_4_2 a_4"  > <img src="" alt="" > 
+        </div>
+        </div>
+  
+        <div class="container-fluid a_3" style="display: flex; min-height: 70vh;">
+        <div class="a_5"  > <img src="" alt="" > 
+        </div>
+        <div class="a_5_1 a_5"  > <img src="" alt="" > 
+        </div>
+        </div>
+    </div>
+    </div>
+    </div>
+  </div>
+
+
+<style>
+  .button-show-more-2{
+      width: 250px;
+      margin-left: 560px;
+      height: 50px;
+      color: white;
+      background-color:black;
+      backdrop-filter: blur(10px);
+      border: 1.8px solid rgb(61, 60, 60);
+
+
+  }
+</style>
+<br>
+<br>
+<a href="{% url 'feature' %}"  ><button class="button-show-more-2">SEE ALL</button></a>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<!-- footer -->
+    <!-- footer -->
+    <!-- footer -->
+    <!-- footer -->
+    <!-- footer -->
+    <!-- footer -->
+    <!-- footer -->
+    <!-- footer -->
+  
+     <center> <div href="" style="font-size: 14px; height: 100px;background-image: linear-gradient(rgba(0, 0, 0, 0.253),rgba(20, 20, 20, 0.61)),url(/static/image/back.png); padding-top: 50px;  width: 100%;  text-decoration: none; color: white;">@ 2023 - 2025 Copy Right</div></center>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+     <script>
+       AOS.init();
+     </script> 
+
+
+
+  <script>
+    window.onscroll = function(){myfunction()};
+    function myfunction(){
+      if(document.body.scrollTop >20 ||document.documentElement.scrollTop > 20)
+      document.getElementById("ali").style.boxShadow="0 0 50px black",
+      ali.style.background="rgba(0, 0, 0, 0.74)",
+      hassan.style.display="block";
+      else{
+      document.getElementById("ali").style.boxShadow="none";
+      document.getElementById("ali").style.backgroundColor="";
+      hassan.style.display="none";
+
+
+    }
+    }
+   
+  </script>
+    <script src='https://code.jquery.com/jquery-3.2.1.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/round-slider@1.4.0/dist/roundslider.min.js'></script>
+    
+    <script>
+      $("#slider1").roundSlider({
+        sliderType: "min-range",
+        value: {{ltitude}},
+          svgMode: true
+    });
+    
+    
+    </script>
+
+    <script>
+      
+    </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+</body>
+</html>

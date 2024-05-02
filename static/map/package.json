@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "leaflet-routing-machine": "^3.2.12"
+  },
+  "name": "mapty-map-navigator",
+  "version": "1.0.0",
+  "main": "script.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tayyab Ali",
+  "license": "ISC",
+  "description": ""
+}
