@@ -77,7 +77,7 @@ We welcome contributions from the community to enhance this project further. If 
 
 ### License:
 
-This project is licensed under the [[(https://github.com/alihassanml/Cansat-Satellite.git)](LICENSE).
+This project is licensed under the (alihassanml)
 
 ---
 
